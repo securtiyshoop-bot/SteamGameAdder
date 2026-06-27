@@ -1,0 +1,31 @@
+<Window x:Class="SteamGameAdder.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Ayarlar" Height="300" Width="500"
+        Background="#1E1E1E" Foreground="#FFFFFF"
+        WindowStartupLocation="CenterOwner"
+        WindowStyle="SingleBorderWindow">
+    <StackPanel Padding="20" Spacing="15">
+        <TextBlock Text="⚙️ Ayarlar" FontSize="24" FontWeight="Bold" Foreground="#00D4FF"/>
+        
+        <GroupBox Header="Steam Dizini" Foreground="#00D4FF" BorderBrush="#404040" Padding="15">
+            <StackPanel Spacing="10">
+                <TextBlock Text="Steam kurulum yolu:" Foreground="#FFFFFF"/>
+                <Grid ColumnSpacing="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="SteamPathInput" Padding="10" Background="#2D2D2D" Foreground="#FFFFFF" BorderBrush="#404040" Height="35"/>
+                    <Button Grid.Column="1" Content="📁 Seç" Click="BrowseFolder_Click" Padding="15,0" Background="#0066FF" Foreground="White" FontSize="12" FontWeight="Bold"/>
+                </Grid>
+                <TextBlock Text="Örnek: C:\\Program Files (x86)\\Steam" FontSize="11" Foreground="#808080"/>
+            </StackPanel>
+        </GroupBox>
+
+        <StackPanel Orientation="Horizontal" Spacing="10" HorizontalAlignment="Right">
+            <Button x:Name="SaveBtn" Content="✓ Kaydet" Click="Save_Click" Padding="20,10" Background="#00AA00" Foreground="White" FontSize="12" FontWeight="Bold" Cursor="Hand"/>
+            <Button x:Name="CancelBtn" Content="✕ İptal" Click="Cancel_Click" Padding="20,10" Background="#FF4444" Foreground="White" FontSize="12" FontWeight="Bold" Cursor="Hand"/>
+        </StackPanel>
+    </StackPanel>
+</Window>
